@@ -17,6 +17,13 @@ async def load_extensions():
     await bot.load_extension("games.action_verite")
     await bot.load_extension("games.puissance4")
     await bot.load_extension("games.devine_tete")
+    await bot.load_extension("games.jackpot")
+    await bot.load_extension("games.des")
+    await bot.load_extension("games.quiz")
+    await bot.load_extension("games.pfc")
+    await bot.load_extension("games.morpion")
+    await bot.load_extension("games.pendu")
+    await bot.load_extension("games.nombre_mystere")
 
 @bot.event
 async def on_ready():
@@ -33,18 +40,53 @@ async def aide(ctx):
     )
     embed.add_field(
         name="🎭 Action ou Vérité",
-        value="`!av` — Lance une partie\n`!action` — Tire une action\n`!verite` — Tire une vérité",
-        inline=False
+        value="`!av` `!action` `!verite`",
+        inline=True
     )
     embed.add_field(
         name="🔴 Puissance 4",
-        value="`!p4` — Solo contre le bot (MP)\n`!p4 @adversaire` — Contre quelqu'un (serveur)\n`!jouer <1-7>` — Place ton jeton\n`!abandon` — Abandonne",
-        inline=False
+        value="`!p4` `!p4 @pseudo` `!jouer <1-7>` `!abandon`",
+        inline=True
     )
     embed.add_field(
         name="🤔 Devine la Tête",
-        value="`!devine` — Lance une partie\n`!indice` — Demande un indice\n`!reponse <nom>` — Propose une réponse\n`!passedevine` — Abandonne",
-        inline=False
+        value="`!devine` `!indice` `!reponse <nom>` `!passedevine`",
+        inline=True
+    )
+    embed.add_field(
+        name="🎰 Jackpot",
+        value="`!jackpot <mise>` `!coins` `!daily`",
+        inline=True
+    )
+    embed.add_field(
+        name="🎲 Dés",
+        value="`!des <nb>` `!duel @pseudo`",
+        inline=True
+    )
+    embed.add_field(
+        name="❓ Quiz",
+        value="`!quiz` `!quiz <cat>` `!quizcats` `!quizscore`",
+        inline=True
+    )
+    embed.add_field(
+        name="✂️ Pierre Feuille Ciseaux",
+        value="`!pfc` `!pfc @pseudo`",
+        inline=True
+    )
+    embed.add_field(
+        name="❌⭕ Morpion",
+        value="`!morpion` `!morpion @pseudo` `!case <1-9>` `!stopmorpion`",
+        inline=True
+    )
+    embed.add_field(
+        name="🪢 Pendu",
+        value="`!pendu` `!lettre <a-z>` `!motentier <mot>` `!stoppendu`",
+        inline=True
+    )
+    embed.add_field(
+        name="🔢 Nombre Mystère",
+        value="`!nombre` `!nombre <max>` `!proposer <nb>` `!stopnombre`",
+        inline=True
     )
     embed.set_footer(text="Bot Mini-Jeux • Bonne chance ! 🍀")
     await ctx.send(embed=embed)
