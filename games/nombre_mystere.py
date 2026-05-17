@@ -7,7 +7,7 @@ class NombreMystere(commands.Cog):
         self.bot = bot
         self.parties = {}
 
-    @commands.command(name="nombre", aliases=["mystery", "guess"])
+    @commands.command(name="nombre", aliases=["mystery", "deviner"])
     async def nombre(self, ctx, max_val: int = 100):
         """Devine le nombre mystère ! !nombre ou !nombre <max>"""
         uid = ctx.author.id
